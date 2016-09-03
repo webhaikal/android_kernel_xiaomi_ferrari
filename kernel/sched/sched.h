@@ -501,6 +501,12 @@ struct rq {
 	int max_possible_capacity;
 	u64 window_start;
 
+	unsigned int cur_freq, max_freq, min_freq, max_possible_freq;
+
+	u64 cur_irqload;
+	u64 avg_irqload;
+	u64 irqload_ts;
+
 #ifdef CONFIG_SCHED_FREQ_INPUT
 	unsigned int old_busy_time;
 	int notifier_sent;
