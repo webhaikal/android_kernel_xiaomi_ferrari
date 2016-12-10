@@ -189,6 +189,8 @@ struct msm_compr_ch_map {
 	char channel_map[PCM_FORMAT_MAX_NUM_CHANNEL];
 };
 
+static struct wakeup_source drain_wake_lock;
+
 static int msm_compr_send_dec_params(struct snd_compr_stream *cstream,
 				     struct msm_compr_dec_params *dec_params,
 				     int stream_id);
