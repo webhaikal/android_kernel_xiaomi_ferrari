@@ -33,5 +33,11 @@ cd $BUILD_DIR
 zipfile="SenseiMi4i-$version+$TC-$(date +"%Y-%m-%d(%I.%M%p)").zip"
 echo $zipfile
 zip -r9 $zipfile * -x README
+
+outdir=(/usr/share/nginx/html/SenseiKernel/SenseiMi4i*)
+if [ ${#outdir[@]} -gt 2 ]; then
+sudo ls -t | sed -e '1,3d' | xargs -d '\n' sudo rm
+fi
+
 sudo mv $BUILD_DIR/$zipfile /usr/share/nginx/html/SenseiKernel
 
