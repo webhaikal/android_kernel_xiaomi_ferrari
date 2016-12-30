@@ -34,7 +34,8 @@ zipfile="SenseiMi4i-$version+$TC-$(date +"%Y-%m-%d(%I.%M%p)").zip"
 echo $zipfile
 zip -r9 $zipfile * -x README
 
-outdir=(/usr/share/nginx/html/SenseiKernel/SenseiMi4i*)
+outdir=(/usr/share/nginx/html/SenseiKernel/*)
+
 if [ ${#outdir[@]} -gt 2 ]; then
 sudo ls -t | sed -e '1,3d' | xargs -d '\n' sudo rm
 fi
